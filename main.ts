@@ -1,10 +1,25 @@
 namespace SpriteKind {
     export const h = SpriteKind.create()
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
+    game.showLongText("You have caught the virus lurking in the air. You have failed!", DialogLayout.Center)
+    game.over(false)
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (person.vy == 0) {
         person.vy = -150
     }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    game.showLongText("", DialogLayout.Center)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardWater, function (sprite, location) {
+    game.showLongText("Your clumsiness has led to your death. You have drowned! ", DialogLayout.Center)
+    game.over(false)
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
+    game.showLongText("You have caught the virus from the crowd! You have failed your fellow citizens!", DialogLayout.Center)
+    game.over(false)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     person.vy = 150
@@ -182,5 +197,7 @@ tiles.setTilemap(tiles.createTilemap(hex`140096000000000000000000000000000000000
     `, [myTiles.transparency16,sprites.dungeon.floorLight0,myTiles.tile5,myTiles.tile7,sprites.dungeon.hazardWater,myTiles.tile3,sprites.dungeon.chestClosed], TileScale.Sixteen))
 tiles.placeOnTile(person, tiles.getTileLocation(0, 148))
 scene.cameraFollowSprite(person)
+game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
+game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way.", DialogLayout.Top)
 controller.moveSprite(person, 100, 0)
 person.ay = 300
