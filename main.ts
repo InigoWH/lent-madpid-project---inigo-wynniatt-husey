@@ -126,7 +126,7 @@ person = sprites.create(img`
     `, SpriteKind.Player)
 info.setLife(3)
 tiles.setTilemap(tilemap`level_2`)
-tiles.placeOnTile(person, tiles.getTileLocation(0, 148))
+tiles.placeOnTile(person, tiles.getTileLocation(1, 148))
 scene.cameraFollowSprite(person)
 game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
 game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way. Each time you respawn at a checkpoint you lose a health", DialogLayout.Top)
