@@ -39,6 +39,11 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile8": {
+        "data": "hwQQABAAAAAREREiEhERERERESISERERERERIhIREREREREiEhERERERESISERERERERIhIREREiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIREREiEhERERERESISERERERERIhIREREREREiEhERERERESISERERERERIhIREREREREiEhEREQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
