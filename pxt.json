@@ -2,7 +2,13 @@
     "name": "Lent MADPID Project - Inigo Wynniatt-Husey",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*",
+        "corgio": "*",
+        "controller": "*",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
+        "keyboard": "*"
     },
     "files": [
         "main.blocks",

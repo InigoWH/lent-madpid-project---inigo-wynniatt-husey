@@ -1,7 +1,13 @@
+namespace SpriteKind {
+    export const h = SpriteKind.create()
+}
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    if (person.vy == 0) {
+        person.vy = -100
+    }
 })
-let person = sprites.create(img`
+let person: Sprite = null
+person = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . e e e e e e . . . . . . 
@@ -19,7 +25,6 @@ let person = sprites.create(img`
     . . . . . 8 . . 8 . . . . . . . 
     . . . . e e . . e e . . . . . . 
     `, SpriteKind.Player)
-scene.cameraFollowSprite(person)
 tiles.setTilemap(tiles.createTilemap(hex`1400140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000202000000000000000000000000000000000000000000000000000200000000000000000000000000000000000200020000000000000000000000000201010103020302030000000000000000000000`, img`
     ....................
     ....................
@@ -43,3 +48,8 @@ tiles.setTilemap(tiles.createTilemap(hex`140014000000000000000000000000000000000
     2222.2.2............
     `, [myTiles.transparency16,sprites.dungeon.floorLight4,sprites.dungeon.floorLight0,sprites.builtin.crowd2], TileScale.Sixteen))
 tiles.placeOnTile(person, tiles.getTileLocation(0, 18))
+scene.cameraFollowSprite(person)
+game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
+game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way", DialogLayout.Top)
+controller.moveSprite(person, 100, 0)
+person.ay = 200
