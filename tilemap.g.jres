@@ -44,6 +44,21 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile9": {
+        "data": "hwQQABAAAAAAAAAkAgAAAAAAACICAAAAAAAAIgIAAAAAAAAiAgAAAAAAACICAAAAAAAAIgIAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAiAgAAAAAAACICAAAAAAAAIgIAAAAAAAAiAgAAAAAAACICAAAAAAAAIgIAAAAAAAAkAgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile10": {
+        "data": "hwQQABAAAAAAAAAkAgAAAAAAACICAAAAAAAAJAIAAAAAAAAiAgAAAAAAACICAAAAAAAAIgIAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAiAgAAAAAAACICAAAAAAAAIgIAAAAAAAAiAgAAAAAAACQCAAAAAAAAIgIAAAAAAAAkAgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile11": {
+        "data": "hwQQABAAAAAAAAAkAgAAAAAAACICAAAAAAAAJAIAAAAAAAAiAgAAAAAAACQCAAAAAAAAIgIAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAiAgAAAAAAACICAAAAAAAAJAIAAAAAAAAiAgAAAAAAACQCAAAAAAAAIgIAAAAAAAAkAgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
