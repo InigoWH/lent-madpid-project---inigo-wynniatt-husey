@@ -208,7 +208,7 @@ person = sprites.create(img`
     . . . . . 8 . . 8 . . . . . . . 
     . . . . e e . . e e . . . . . . 
     `, SpriteKind.Player)
-info.setLife(3)
+info.setLife(100000)
 tiles.setTilemap(tilemap`level_2`)
 tiles.placeOnTile(person, tiles.getTileLocation(1, 148))
 scene.cameraFollowSprite(person)
