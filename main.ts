@@ -134,9 +134,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    Chest = randint(0, 10)
+    Chest = randint(0, 0)
     if (Chest == 0) {
-    	
+        music.baDing.play()
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
@@ -387,7 +387,7 @@ person = sprites.create(img`
     `, SpriteKind.Player)
 info.setLife(100000)
 tiles.setTilemap(tilemap`level_2`)
-tiles.placeOnTile(person, tiles.getTileLocation(1, 148))
+tiles.placeOnTile(person, tiles.getTileLocation(9, 46))
 scene.cameraFollowSprite(person)
 game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
 game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way. Each time you respawn at a checkpoint you lose a health", DialogLayout.Top)
