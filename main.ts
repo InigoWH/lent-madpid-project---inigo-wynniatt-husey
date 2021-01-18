@@ -133,6 +133,142 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
         game.showLongText("Checkpoint 7 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
+    game.showLongText("You have suffered serious burn wounds. You are transported to the nearest hospital", DialogLayout.Center)
+    if (Checkpoint_counter == 1) {
+        tiles.placeOnRandomTile(person, myTiles.tile8)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 2) {
+        tiles.placeOnRandomTile(person, myTiles.tile9)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 3) {
+        tiles.placeOnRandomTile(person, myTiles.tile10)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 4) {
+        tiles.placeOnRandomTile(person, myTiles.tile11)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 5) {
+        tiles.placeOnRandomTile(person, myTiles.tile14)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 6) {
+        tiles.placeOnRandomTile(person, myTiles.tile15)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 7) {
+        tiles.placeOnRandomTile(person, myTiles.tile16)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 8) {
+        tiles.placeOnRandomTile(person, myTiles.tile17)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 9) {
+        tiles.placeOnRandomTile(person, myTiles.tile18)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 10) {
+        tiles.placeOnRandomTile(person, myTiles.tile19)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 11) {
+        tiles.placeOnRandomTile(person, myTiles.tile23)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 12) {
+        tiles.placeOnRandomTile(person, myTiles.tile24)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 13) {
+        tiles.placeOnRandomTile(person, myTiles.tile25)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardWater, function (sprite, location) {
+    game.showLongText("Your clumsiness has led to your death. You have drowned! You are transported back to the nearest hospital.", DialogLayout.Center)
+    if (Checkpoint_counter == 1) {
+        tiles.placeOnRandomTile(person, myTiles.tile8)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 2) {
+        tiles.placeOnRandomTile(person, myTiles.tile9)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 3) {
+        tiles.placeOnRandomTile(person, myTiles.tile10)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 4) {
+        tiles.placeOnRandomTile(person, myTiles.tile11)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 5) {
+        tiles.placeOnRandomTile(person, myTiles.tile14)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 6) {
+        tiles.placeOnRandomTile(person, myTiles.tile15)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 7) {
+        tiles.placeOnRandomTile(person, myTiles.tile16)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 8) {
+        tiles.placeOnRandomTile(person, myTiles.tile17)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 9) {
+        tiles.placeOnRandomTile(person, myTiles.tile18)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 10) {
+        tiles.placeOnRandomTile(person, myTiles.tile19)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 11) {
+        tiles.placeOnRandomTile(person, myTiles.tile23)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 12) {
+        tiles.placeOnRandomTile(person, myTiles.tile24)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 13) {
+        tiles.placeOnRandomTile(person, myTiles.tile25)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
     game.showLongText("You have caught the virus from the crowd! You have failed your citizens! You are transported back to the nearest hospital.", DialogLayout.Center)
     if (Checkpoint_counter == 1) {
