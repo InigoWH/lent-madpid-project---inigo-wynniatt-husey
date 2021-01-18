@@ -43,6 +43,31 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
         info.changeLifeBy(-1)
         music.powerDown.play()
     }
+    if (Checkpoint_counter == 9) {
+        tiles.placeOnRandomTile(person, myTiles.tile18)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 10) {
+        tiles.placeOnRandomTile(person, myTiles.tile19)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 11) {
+        tiles.placeOnRandomTile(person, myTiles.tile23)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 12) {
+        tiles.placeOnRandomTile(person, myTiles.tile24)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 13) {
+        tiles.placeOnRandomTile(person, myTiles.tile25)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
     if (Checkpoint_counter < 5) {
@@ -53,6 +78,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (person.vy == 0) {
         person.vy = -150
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile23, function (sprite, location) {
+    if (Checkpoint_counter < 11) {
+        Checkpoint_counter += 1
+        game.showLongText("Checkpoint 10 reached", DialogLayout.Top)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile25, function (sprite, location) {
+    if (Checkpoint_counter < 13) {
+        Checkpoint_counter += 1
+        game.showLongText("Checkpoint 12 reached", DialogLayout.Top)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile16, function (sprite, location) {
@@ -72,6 +109,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
         Checkpoint_counter += 1
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile19, function (sprite, location) {
+    if (Checkpoint_counter < 10) {
+        Checkpoint_counter += 1
+        game.showLongText("Checkpoint 9 reached", DialogLayout.Top)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (Checkpoint_counter < 2) {
         Checkpoint_counter += 1
@@ -88,49 +131,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
     if (Checkpoint_counter < 8) {
         Checkpoint_counter += 1
         game.showLongText("Checkpoint 7 reached", DialogLayout.Top)
-    }
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardWater, function (sprite, location) {
-    game.showLongText("Your clumsiness has led to your death. You have drowned! You are transported back to the nearest hospital.", DialogLayout.Center)
-    if (Checkpoint_counter == 1) {
-        tiles.placeOnRandomTile(person, myTiles.tile8)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 2) {
-        tiles.placeOnRandomTile(person, myTiles.tile9)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 3) {
-        tiles.placeOnRandomTile(person, myTiles.tile10)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 4) {
-        tiles.placeOnRandomTile(person, myTiles.tile11)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 5) {
-        tiles.placeOnRandomTile(person, myTiles.tile14)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 6) {
-        tiles.placeOnRandomTile(person, myTiles.tile15)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 7) {
-        tiles.placeOnRandomTile(person, myTiles.tile16)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
-    }
-    if (Checkpoint_counter == 8) {
-        tiles.placeOnRandomTile(person, myTiles.tile17)
-        info.changeLifeBy(-1)
-        music.powerDown.play()
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
@@ -175,9 +175,46 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location
         info.changeLifeBy(-1)
         music.powerDown.play()
     }
+    if (Checkpoint_counter == 9) {
+        tiles.placeOnRandomTile(person, myTiles.tile18)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 10) {
+        tiles.placeOnRandomTile(person, myTiles.tile19)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 11) {
+        tiles.placeOnRandomTile(person, myTiles.tile23)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 12) {
+        tiles.placeOnRandomTile(person, myTiles.tile24)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+    if (Checkpoint_counter == 13) {
+        tiles.placeOnRandomTile(person, myTiles.tile25)
+        info.changeLifeBy(-1)
+        music.powerDown.play()
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile24, function (sprite, location) {
+    if (Checkpoint_counter < 12) {
+        Checkpoint_counter += 1
+        game.showLongText("Checkpoint 11 reached", DialogLayout.Top)
+    }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     person.vy = 150
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile18, function (sprite, location) {
+    if (Checkpoint_counter < 9) {
+        Checkpoint_counter += 1
+        game.showLongText("Checkpoint 8 reached", DialogLayout.Top)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, location) {
     if (Checkpoint_counter < 3) {
