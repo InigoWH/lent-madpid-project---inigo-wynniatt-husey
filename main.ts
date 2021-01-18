@@ -133,6 +133,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
         game.showLongText("Checkpoint 7 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    Chest = randint(0, 10)
+    if (Chest == 0) {
+    	
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.showLongText("You have suffered serious burn wounds. You are transported to the nearest hospital", DialogLayout.Center)
     if (Checkpoint_counter == 1) {
@@ -358,9 +364,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, locatio
         game.showLongText("Checkpoint 2 reached", DialogLayout.Top)
     }
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
-    game.showLongText("The chest is empty there are no components to find here!", DialogLayout.Top)
-})
+let Chest = 0
 let Checkpoint_counter = 0
 let person: Sprite = null
 person = sprites.create(img`
