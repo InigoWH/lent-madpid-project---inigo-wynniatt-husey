@@ -136,7 +136,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile17, function (sprite, locatio
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     Chest = randint(0, 0)
     if (Chest == 0) {
-        music.baDing.play()
+        game.showLongText("You find an orb. You reach and grab it, it crumbles at your touch. Suddenly the atmosphere feels lighter. Gravity now takes longer to pull you to the ground", DialogLayout.Top)
+        person.ay = 200
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
