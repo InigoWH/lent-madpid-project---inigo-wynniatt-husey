@@ -178,7 +178,8 @@
             "sprites.dungeon.floorLight4",
             "sprites.dungeon.floorLight0",
             "sprites.builtin.crowd2"
-        ]
+        ],
+        "displayName": "level"
     },
     "level_0": {
         "id": "level_0",
@@ -189,7 +190,8 @@
             "sprites.dungeon.floorLight4",
             "sprites.dungeon.floorLight0",
             "sprites.builtin.crowd2"
-        ]
+        ],
+        "displayName": "level_0"
     },
     "level_1": {
         "id": "level_1",
@@ -200,7 +202,8 @@
             "sprites.dungeon.floorLight4",
             "sprites.dungeon.floorLight0",
             "sprites.builtin.crowd2"
-        ]
+        ],
+        "displayName": "level_1"
     },
     "level_2": {
         "id": "level_2",
@@ -242,7 +245,8 @@
             "myTiles.tile32",
             "myTiles.tile33",
             "myTiles.tile25"
-        ]
+        ],
+        "displayName": "level_2"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
