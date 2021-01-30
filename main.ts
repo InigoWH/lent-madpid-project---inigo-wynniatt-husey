@@ -184,6 +184,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile24`, function (sprite, lo
         game.showLongText("Checkpoint 11 reached", DialogLayout.Top)
     }
 })
+function Movement_Enemy () {
+    for (let index = 0; index < 4; index++) {
+        Enemy_1.x += 30
+        pause(2000)
+        Enemy_1.x += -30
+        pause(2000)
+    }
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile23`, function (sprite, location) {
     if (Checkpoint_counter < 11) {
         Checkpoint_counter += 1
@@ -210,6 +218,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, loc
 })
 let Chest = 0
 let Checkpoint_counter = 0
+let Enemy_1: Sprite = null
 let Make_chest_not_happen_again = 0
 let person: Sprite = null
 person = sprites.create(img`
@@ -230,7 +239,7 @@ person = sprites.create(img`
     . . . . . 8 . . 8 . . . . . . . 
     . . . . e e . . e e . . . . . . 
     `, SpriteKind.Player)
-info.setLife(100000)
+info.setLife(10)
 tiles.setTilemap(tilemap`level_2`)
 tiles.placeOnTile(person, tiles.getTileLocation(1, 148))
 scene.cameraFollowSprite(person)
@@ -239,7 +248,7 @@ person.ay = 300
 game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
 game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way. Each time you respawn at a checkpoint you lose a health", DialogLayout.Top)
 Make_chest_not_happen_again = 0
-let Enemy_1 = sprites.create(img`
+Enemy_1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -258,6 +267,4 @@ let Enemy_1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
 tiles.placeOnTile(Enemy_1, tiles.getTileLocation(6, 145))
-forever(function () {
-	
-})
+Movement_Enemy()
