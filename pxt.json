@@ -10,7 +10,8 @@
         "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
         "keyboard": "*",
         "Timers": "github:microsoft/arcade-timers#v1.1.0",
-        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
+        "servo": "*"
     },
     "files": [
         "main.blocks",

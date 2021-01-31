@@ -18,6 +18,13 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         person.vy = -150
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ally, function (sprite, otherSprite) {
+    game.showLongText("Hello young hero have you brought me the components? Ahh I see you have. (After pottering around various benches). He shouts Eureka! We have the vaccine! ", DialogLayout.Top)
+    effects.confetti.startScreenEffect()
+    game.showLongText("You have won. Congratulations!", DialogLayout.Center)
+    effects.confetti.endScreenEffect()
+    game.over(true)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile14`, function (sprite, location) {
     if (Checkpoint_counter < 5) {
         Checkpoint_counter += 1
@@ -405,15 +412,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, loc
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
-    Componenet += 1
     if (Componenet == 1) {
         game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
+        Componenet += 1
     }
     if (Componenet == 2) {
         game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
+        Componenet += 1
     }
     if (Componenet == 3) {
         game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
+        Componenet += 1
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -496,9 +505,10 @@ for (let index = 0; index < 1; index++) {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Enemy)
-    tiles.placeOnTile(Enemy_2, tiles.getTileLocation(20, 150))
+    tiles.placeOnTile(Enemy_2, tiles.getTileLocation(17, 67))
 }
 let mySprite = sprites.create(assets.image`professor`, SpriteKind.ally)
+tiles.placeOnTile(mySprite, tiles.getTileLocation(3, 2))
 Componenet = 0
 forever(function () {
     Enemy_1.x += 40
@@ -507,8 +517,8 @@ forever(function () {
     pause(1000)
 })
 forever(function () {
-    Enemy_2.x += 30
-    pause(1000)
     Enemy_2.x += -30
+    pause(1000)
+    Enemy_2.x += 30
     pause(1000)
 })
