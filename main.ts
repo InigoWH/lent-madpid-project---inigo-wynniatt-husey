@@ -5,6 +5,7 @@ enum ActionKind {
 }
 namespace SpriteKind {
     export const h = SpriteKind.create()
+    export const ally = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile`, function (sprite, location) {
     if (Checkpoint_counter < 14) {
@@ -23,9 +24,108 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile14`, function (sprite, lo
         game.showLongText("Checkpoint 4 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile33`, function (sprite, location) {
+    if (Sign == 0) {
+        game.showLongText("At last you have made it to the lab, well done! Saviour of All. Speak to the Mad professor and give him the components you have found", DialogLayout.Full)
+        Sign += 1
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile7`, function (sprite, location) {
     game.showLongText("You have caught the virus from the crowd! You have failed your citizens! You are transported back to the nearest hospital.", DialogLayout.Center)
     doSomething()
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    person,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 . . . . . . . 
+        . . . . . 8 . . 8 . . . . . . . 
+        . . . . e e . e e . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . 8 8 8 8 8 . . . . . . . 
+        . . . e e . . . 8 . . . . . . . 
+        . . . . . . . e e . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 . . . . . . . 
+        . . . . . 8 . e e . . . . . . . 
+        . . . . e e . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . 8 8 8 8 8 . . . . . . . 
+        . . . . 8 . . . 8 . . . . . . . 
+        . . . e e . . e e . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . e e e e e e . . . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . . e d d d d d d e . . . . 
+        . . . . . d 8 d d 8 d . . . . . 
+        . . . . . 4 4 4 4 4 4 . . . . . 
+        . . . . . . 4 4 4 4 . . . . . . 
+        . . . . 7 7 7 4 4 7 7 7 . . . . 
+        . . . . 7 7 7 7 7 7 7 7 . . . . 
+        . . . . 7 . 7 7 7 7 . 7 . . . . 
+        . . . . 7 . 7 7 7 7 . 7 . . . . 
+        . . . . d . 7 7 7 7 . d . . . . 
+        . . . . . . 8 8 8 8 . . . . . . 
+        . . . . . . 8 . . 8 . . . . . . 
+        . . . . . e e . e e . . . . . . 
+        `],
+    100,
+    false
+    )
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile3`, function (sprite, location) {
     game.showLongText("You have caught the virus lurking in the air. You have failed! You are transported back to the nearest hospital.", DialogLayout.Center)
@@ -38,7 +138,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile25`, function (sprite, lo
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile19`, function (sprite, location) {
-    if (Checkpoint_counter < 10) {
+    if (0 < 10) {
         Checkpoint_counter += 1
         game.showLongText("Checkpoint 9 reached", DialogLayout.Top)
     }
@@ -62,21 +162,110 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile16`, function (sprite, lo
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    let CHEST_Not_II = 0
     Chest = randint(0, 0)
     if (Chest == 0 && Make_chest_not_happen_again != 100) {
         game.showLongText("You find an orb. You reach and grab it, it crumbles at your touch. Suddenly the atmosphere feels lighter. Gravity now takes longer to pull you to the ground", DialogLayout.Top)
         person.ay = 200
         Make_chest_not_happen_again = 100
     }
-    if (Chest == 1 && CHEST_Not_II != 200) {
-    	
-    }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile8`, function (sprite, location) {
     if (Checkpoint_counter < 1) {
         Checkpoint_counter += 1
     }
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    person,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 . . . . . . . 
+        . . . . . 8 . . 8 . . . . . . . 
+        . . . . . e e . e e . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 8 . . . . . . 
+        . . . . . 8 . . . e e . . . . . 
+        . . . . . e e . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 . . . . . . . 
+        . . . . . e e . 8 . . . . . . . 
+        . . . . . . . . e e . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e . . . . . . 
+        . . . e e e e e e e e . . . . . 
+        . . . e d d d d d d e . . . . . 
+        . . . . d 8 d d 8 d . . . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . 7 7 7 4 4 7 7 7 . . . . . 
+        . . . 7 7 7 7 7 7 7 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . 7 . 7 7 7 7 . 7 . . . . . 
+        . . . d . 7 7 7 7 . d . . . . . 
+        . . . . . 8 8 8 8 8 . . . . . . 
+        . . . . . . 8 . . 8 . . . . . . 
+        . . . . . . e e . e e . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . e e e e e e . . . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . . e d d d d d d e . . . . 
+        . . . . . d 8 d d 8 d . . . . . 
+        . . . . . 4 4 4 4 4 4 . . . . . 
+        . . . . . . 4 4 4 4 . . . . . . 
+        . . . . 7 7 7 4 4 7 7 7 . . . . 
+        . . . . 7 7 7 7 7 7 7 7 . . . . 
+        . . . . 7 . 7 7 7 7 . 7 . . . . 
+        . . . . 7 . 7 7 7 7 . 7 . . . . 
+        . . . . d . 7 7 7 7 . d . . . . 
+        . . . . . . 8 8 8 8 . . . . . . 
+        . . . . . . 8 . . 8 . . . . . . 
+        . . . . . . e e . e e . . . . . 
+        `],
+    100,
+    false
+    )
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.showLongText("You have suffered serious burn wounds. You are transported to the nearest hospital", DialogLayout.Center)
@@ -184,14 +373,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile24`, function (sprite, lo
         game.showLongText("Checkpoint 11 reached", DialogLayout.Top)
     }
 })
-function Movement_Enemy () {
-    for (let index = 0; index < 4; index++) {
-        Enemy_1.x += 30
-        pause(2000)
-        Enemy_1.x += -30
-        pause(2000)
-    }
-}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile23`, function (sprite, location) {
     if (Checkpoint_counter < 11) {
         Checkpoint_counter += 1
@@ -210,17 +391,44 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile10`, function (sprite, lo
         game.showLongText("Checkpoint 2 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
+    let health = 0
+    if (health == 0) {
+        game.showLongText("You have found a health orb. From the hole you drink it's contents. You feel refreshed. ", DialogLayout.Top)
+        info.changeLifeBy(randint(1, 5))
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, location) {
     if (Checkpoint_counter < 2) {
         Checkpoint_counter += 1
         game.showLongText("Checkpoint 1 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
+    Componenet += 1
+    if (Componenet == 1) {
+        game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
+    }
+    if (Componenet == 2) {
+        game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
+    }
+    if (Componenet == 3) {
+        game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.showLongText("A moving COVID 19 molecule has collided with you, you are transported to the nearest hospital", DialogLayout.Top)
+    doSomething()
+})
 let Chest = 0
 let Checkpoint_counter = 0
+let Componenet = 0
+let Enemy_2: Sprite = null
 let Enemy_1: Sprite = null
 let Make_chest_not_happen_again = 0
 let person: Sprite = null
+let Sign = 0
+Sign = 0
 person = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -248,23 +456,59 @@ person.ay = 300
 game.showLongText("Press 'A' on screen to continue", DialogLayout.Top)
 game.showLongText("You have been summoned to save the human race from a deadly disease called COVID-19. Against all peril you must find the components to create a vaccine avoiding contagious people and viruses along the way. Each time you respawn at a checkpoint you lose a health", DialogLayout.Top)
 Make_chest_not_happen_again = 0
-Enemy_1 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . 7 . . . . . . . . 
-    . . . . . . 7 7 7 . . . . . . . 
-    . . . . 2 f 7 2 7 f 2 . . . . . 
-    . . . . f 2 f 2 f 2 f . . . . . 
-    . . . 7 7 f 2 2 2 f 7 7 . . . . 
-    . . 7 7 2 2 2 2 2 2 2 7 7 . . . 
-    . . . 7 7 f 2 2 2 f 7 7 . . . . 
-    . . . . f 2 f 2 f 2 f . . . . . 
-    . . . . 2 f 7 2 7 f 2 . . . . . 
-    . . . . . . 7 7 7 . . . . . . . 
-    . . . . . . . 7 . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Enemy)
-tiles.placeOnTile(Enemy_1, tiles.getTileLocation(6, 145))
-Movement_Enemy()
+for (let index = 0; index < 1; index++) {
+    Enemy_1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 7 . . . . . . . . 
+        . . . . . . 7 7 7 . . . . . . . 
+        . . . . 2 f 7 2 7 f 2 . . . . . 
+        . . . . f 2 f 2 f 2 f . . . . . 
+        . . . 7 7 f 2 2 2 f 7 7 . . . . 
+        . . 7 7 2 2 2 2 2 2 2 7 7 . . . 
+        . . . 7 7 f 2 2 2 f 7 7 . . . . 
+        . . . . f 2 f 2 f 2 f . . . . . 
+        . . . . 2 f 7 2 7 f 2 . . . . . 
+        . . . . . . 7 7 7 . . . . . . . 
+        . . . . . . . 7 . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+    tiles.placeOnTile(Enemy_1, tiles.getTileLocation(9, 113))
+}
+for (let index = 0; index < 1; index++) {
+    Enemy_2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 7 . . . . . . . . 
+        . . . . . . 7 7 7 . . . . . . . 
+        . . . . 2 f 7 2 7 f 2 . . . . . 
+        . . . . f 2 f 2 f 2 f . . . . . 
+        . . . 7 7 f 2 2 2 f 7 7 . . . . 
+        . . 7 7 2 2 2 2 2 2 2 7 7 . . . 
+        . . . 7 7 f 2 2 2 f 7 7 . . . . 
+        . . . . f 2 f 2 f 2 f . . . . . 
+        . . . . 2 f 7 2 7 f 2 . . . . . 
+        . . . . . . 7 7 7 . . . . . . . 
+        . . . . . . . 7 . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+    tiles.placeOnTile(Enemy_2, tiles.getTileLocation(20, 150))
+}
+let mySprite = sprites.create(assets.image`professor`, SpriteKind.ally)
+Componenet = 0
+forever(function () {
+    Enemy_1.x += 40
+    pause(1000)
+    Enemy_1.x += -40
+    pause(1000)
+})
+forever(function () {
+    Enemy_2.x += 30
+    pause(1000)
+    Enemy_2.x += -30
+    pause(1000)
+})
