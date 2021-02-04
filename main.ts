@@ -162,6 +162,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile11`, function (sprite, lo
         game.showLongText("Checkpoint 3 reached", DialogLayout.Top)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
+    health_2 = randint(0, 0)
+    if (health_2 == 0 && make_health_2 != 100) {
+        game.showLongText("You have found a health orb. From the hole you drink it's contents. You feel refreshed. ", DialogLayout.Top)
+        info.changeLifeBy(randint(1, 5))
+        make_health_2 = 100
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile16`, function (sprite, location) {
     if (Checkpoint_counter < 7) {
         Checkpoint_counter += 1
@@ -399,10 +407,11 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile10`, function (sprite, lo
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
-    let health = 0
-    if (health == 0) {
+    health = randint(0, 0)
+    if (health == 0 && make_health_not_happen_again != 100) {
         game.showLongText("You have found a health orb. From the hole you drink it's contents. You feel refreshed. ", DialogLayout.Top)
         info.changeLifeBy(randint(1, 5))
+        make_health_not_happen_again = 100
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, location) {
@@ -429,7 +438,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     game.showLongText("A moving COVID 19 molecule has collided with you, you are transported to the nearest hospital", DialogLayout.Top)
     doSomething()
 })
+let make_health_not_happen_again = 0
+let health = 0
 let Chest = 0
+let make_health_2 = 0
+let health_2 = 0
 let Checkpoint_counter = 0
 let Componenet = 0
 let Enemy_2: Sprite = null
