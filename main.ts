@@ -168,6 +168,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, f
         game.showLongText("You have found a health orb. From the hole you drink it's contents. You feel refreshed. ", DialogLayout.Top)
         info.changeLifeBy(randint(1, 5))
         make_health_2 = 100
+    } else {
+        if (ddd == 0) {
+            game.showLongText("Unfortunately it now is empty", DialogLayout.Top)
+            ddd = 1
+        }
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile16`, function (sprite, location) {
@@ -282,6 +287,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile39`, function (sprite, location) {
+    game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.showLongText("You have suffered serious burn wounds. You are transported to the nearest hospital", DialogLayout.Center)
     doSomething()
@@ -291,78 +299,96 @@ function doSomething () {
         tiles.placeOnRandomTile(person, assets.tile`tile8`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 2) {
         tiles.placeOnRandomTile(person, assets.tile`tile9`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 3) {
         tiles.placeOnRandomTile(person, assets.tile`tile10`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 4) {
         tiles.placeOnRandomTile(person, assets.tile`tile11`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 5) {
         tiles.placeOnRandomTile(person, assets.tile`tile14`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 6) {
         tiles.placeOnRandomTile(person, assets.tile`tile15`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 7) {
         tiles.placeOnRandomTile(person, assets.tile`tile16`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 8) {
         tiles.placeOnRandomTile(person, assets.tile`tile17`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 9) {
         tiles.placeOnRandomTile(person, assets.tile`tile18`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 10) {
         tiles.placeOnRandomTile(person, assets.tile`tile19`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 11) {
         tiles.placeOnRandomTile(person, assets.tile`tile23`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 12) {
         tiles.placeOnRandomTile(person, assets.tile`tile24`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 13) {
         tiles.placeOnRandomTile(person, assets.tile`tile25`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 14) {
         tiles.placeOnRandomTile(person, assets.tile`tile`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
     if (Checkpoint_counter == 15) {
         tiles.placeOnRandomTile(person, assets.tile`tile0`)
         info.changeLifeBy(-1)
         music.powerDown.play()
+        ddd = 0
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile40`, function (sprite, location) {
+    game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardWater, function (sprite, location) {
     game.showLongText("Your clumsiness has led to your death. You have drowned! You are transported back to the nearest hospital.", DialogLayout.Center)
     doSomething()
@@ -412,26 +438,20 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
         game.showLongText("You have found a health orb. From the hole you drink it's contents. You feel refreshed. ", DialogLayout.Top)
         info.changeLifeBy(randint(1, 5))
         make_health_not_happen_again = 100
+    } else {
+        if (ddd == 0) {
+            game.showLongText("Unfortunately it now is empty", DialogLayout.Top)
+            ddd = 1
+        }
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile41`, function (sprite, location) {
+    game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, location) {
     if (Checkpoint_counter < 2) {
         Checkpoint_counter += 1
         game.showLongText("Checkpoint 1 reached", DialogLayout.Top)
-    }
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
-    if (Componenet == 1) {
-        game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
-        Componenet += 1
-    }
-    if (Componenet == 2) {
-        game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
-        Componenet += 1
-    }
-    if (Componenet == 3) {
-        game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
-        Componenet += 1
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -441,10 +461,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let make_health_not_happen_again = 0
 let health = 0
 let Chest = 0
+let ddd = 0
 let make_health_2 = 0
 let health_2 = 0
 let Checkpoint_counter = 0
-let Componenet = 0
 let Enemy_2: Sprite = null
 let Enemy_1: Sprite = null
 let Make_chest_not_happen_again = 0
@@ -522,7 +542,7 @@ for (let index = 0; index < 1; index++) {
 }
 let mySprite = sprites.create(assets.image`professor`, SpriteKind.ally)
 tiles.placeOnTile(mySprite, tiles.getTileLocation(3, 2))
-Componenet = 0
+let Componenet = 1
 forever(function () {
     Enemy_1.x += 40
     pause(1000)
