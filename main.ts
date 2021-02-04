@@ -288,7 +288,10 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile39`, function (sprite, location) {
-    game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
+    if (sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss == 0) {
+        game.showLongText("You have found the second component, well done. You are progressing well...", DialogLayout.Top)
+        sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss = 1
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.showLongText("You have suffered serious burn wounds. You are transported to the nearest hospital", DialogLayout.Center)
@@ -387,7 +390,10 @@ function doSomething () {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile40`, function (sprite, location) {
-    game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
+    if (fffffffffffffffffffffffffffffffffff == 0) {
+        game.showLongText("You have found the first component, well done. However your journey is only just beginning", DialogLayout.Top)
+        fffffffffffffffffffffffffffffffffff = 1
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardWater, function (sprite, location) {
     game.showLongText("Your clumsiness has led to your death. You have drowned! You are transported back to the nearest hospital.", DialogLayout.Center)
@@ -446,7 +452,18 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile41`, function (sprite, location) {
-    game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
+    if (llllllllllllllllllllllllllllllllllllllllllllll == 0) {
+        llllllllllllllllllllllllllllllllllllllllllllll = 1
+        game.showLongText("You have found the last component, well done. However you must find the mad professor who can make it into a vaccine", DialogLayout.Top)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
+    chest_trap = 0
+    if (chest_trap == 0 && g != 100) {
+        game.showLongText("It is a trap you lose some life", DialogLayout.Top)
+        info.changeLifeBy(randint(-1, -2))
+        g = 100
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile9`, function (sprite, location) {
     if (Checkpoint_counter < 2) {
@@ -458,8 +475,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     game.showLongText("A moving COVID 19 molecule has collided with you, you are transported to the nearest hospital", DialogLayout.Top)
     doSomething()
 })
+let g = 0
+let chest_trap = 0
+let llllllllllllllllllllllllllllllllllllllllllllll = 0
 let make_health_not_happen_again = 0
 let health = 0
+let fffffffffffffffffffffffffffffffffff = 0
+let sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss = 0
 let Chest = 0
 let ddd = 0
 let make_health_2 = 0
